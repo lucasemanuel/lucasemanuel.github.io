@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+body {
+    color: #fff;
+    background: rgb(1, 6, 15);
+}
+
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    margin-top: 60px;
+}
+
+h1::after {
+    content: '|';
+    margin-left: 4px;
+    animation: wink 1s infinite;
+}
+
+@keyframes wink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+

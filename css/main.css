@@ -2,9 +2,8 @@
 
 body {
     color: #fff;
-    background: rgb(1, 6, 15);
+    background: rgb(20, 20, 20);
 }
-
 
 h1 {
     font-family: 'Roboto Slab', serif;
@@ -22,3 +21,15 @@ h1::after {
     50% { opacity: 0; }
 }
 
+.perfil-img {
+    max-height: 240px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.perfil-link {
+    font-size: 26px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 20px;
+}

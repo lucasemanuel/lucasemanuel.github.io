@@ -1,25 +1,38 @@
 <template>
-  <div id="container">
-    <aside class="profile">
-      <img
-        class="rounded photo"
-        src="https://avatars.githubusercontent.com/u/31216249?s=460&u=da97f7e2bad1d12d631f5724041004ad272c7b5f&v=4"
-        alt="Photo Lucas Emanuel"
-      />
-      <h1 class="name">
+  <div id="application">
+    <nav class="navbar">
+      <span class="bold">
         Lucas Emanuel
-      </h1>
-      <h2 class="subname">
-        Backend Developer
-      </h2>
-      <ul class="social">
-        <li>@</li>
-        <li>@</li>
-        <li>@</li>
-        <li>@</li>
-      </ul>
-    </aside>
-    <main></main>
+      </span>
+      <span>
+        About
+      </span>
+      <span>
+        Projects
+      </span>
+    </nav>
+    <main class="container">
+      <aside class="profile">
+        <img
+          class="rounded photo"
+          src="https://avatars.githubusercontent.com/u/31216249?s=460&u=da97f7e2bad1d12d631f5724041004ad272c7b5f&v=4"
+          alt="Photo Lucas Emanuel"
+        />
+        <h1 class="name">
+          Lucas Emanuel
+        </h1>
+        <h2 class="subname">
+          Backend Developer
+        </h2>
+        <ul class="social">
+          <li>@</li>
+          <li>@</li>
+          <li>@</li>
+          <li>@</li>
+        </ul>
+      </aside>
+      <section></section>
+    </main>
   </div>
 </template>
 
@@ -37,25 +50,43 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: #d6dfe0;
 }
 
 body {
-  background: #eee;
+  background: #202020;
 }
 
-#container {
-  margin: 0 auto;
+#application {
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #141414;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.navbar span::after {
+  content: "/";
+  margin: 0 8px;
+}
+
+.navbar span:last-child::after {
+  content: "";
+}
+
+.container {
+  margin: 40px auto 0;
   max-width: 1080px;
   display: flex;
-  background: #aaa;
-  height: 100vh;
   text-align: center;
-  color: #2c3e50;
 }
 
 .profile {
   width: 320px;
-  background: #2c3e;
 }
 
 .profile .photo {
@@ -63,11 +94,13 @@ body {
 }
 
 .profile h1.name {
-  font-size: 30px;
+  margin-top: 8px;
+  font-size: 28px;
 }
 
 .profile h2.subname {
-  font-size: 24px;
+  margin-top: 2px;
+  font-size: 22px;
   font-weight: 400;
 }
 
@@ -82,14 +115,17 @@ body {
   margin-right: 2px;
 }
 
-main {
+section {
   flex: 1;
-  background: #2c3e50;
 }
 
 /* AUX */
 
 .rounded {
   border-radius: 50%;
+}
+
+.bold {
+  font-weight: 700;
 }
 </style>

@@ -1,7 +1,5 @@
 <template>
-  <section>
-    <Section title="Carre" />
-  </section>
+  <Section title="Carrer" />
 </template>
 
 <script>

@@ -3,13 +3,13 @@
     <nav class="navbar">
       <ul class="mobile">
         <li class="bold">Lucas Emanuel</li>
-        <li v-on:click="toogleMenu">Menu</li>
+        <li v-on:click="toogleMenu"><a href="#">Menu</a></li>
       </ul>
       <ul class="menu" v-bind:class="classMenu" v-on:click="toogleMenu">
         <li class="bold">Lucas Emanuel</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Carrer</li>
+        <li><router-link to="/">About</router-link></li>
+        <li><router-link to="/projects">Projects</router-link></li>
+        <li><router-link to="/carrer">Carrer</router-link></li>
       </ul>
     </nav>
     <main class="container">
@@ -34,19 +34,14 @@
           </ul>
         </div>
       </aside>
-      <About />
+      <router-view></router-view>
     </main>
   </div>
 </template>
 
 <script>
-import About from "./views/About.vue";
-
 export default {
   name: "App",
-  components: {
-    About,
-  },
   data() {
     return { responsive: false };
   },

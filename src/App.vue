@@ -18,18 +18,20 @@
           src="https://avatars.githubusercontent.com/u/31216249?s=460&u=da97f7e2bad1d12d631f5724041004ad272c7b5f&v=4"
           alt="Photo Lucas Emanuel"
         />
-        <h1 class="name">
-          Lucas Emanuel
-        </h1>
-        <h2 class="subname">
-          Backend Developer
-        </h2>
-        <ul class="social">
-          <li><font-awesome-icon :icon="['fab', 'instagram']" /></li>
-          <li><font-awesome-icon :icon="['fab', 'stack-overflow']" /></li>
-          <li><font-awesome-icon :icon="['fab', 'linkedin-in']" /></li>
-          <li><font-awesome-icon :icon="['fab', 'github']" /></li>
-        </ul>
+        <div class="profile-info">
+          <h1 class="name">
+            Lucas Emanuel
+          </h1>
+          <h2 class="subname">
+            Backend Developer
+          </h2>
+          <ul class="social">
+            <li><font-awesome-icon :icon="['fab', 'instagram']" /></li>
+            <li><font-awesome-icon :icon="['fab', 'stack-overflow']" /></li>
+            <li><font-awesome-icon :icon="['fab', 'linkedin-in']" /></li>
+            <li><font-awesome-icon :icon="['fab', 'github']" /></li>
+          </ul>
+        </div>
       </aside>
       <About />
     </main>
@@ -37,14 +39,14 @@
 </template>
 
 <script>
-import About from './views/About.vue'
+import About from "./views/About.vue";
 
 export default {
   name: "App",
   components: {
-    About
-  }
-}
+    About,
+  },
+};
 </script>
 
 <style>
@@ -92,41 +94,47 @@ body {
 }
 
 .container {
-  margin: 40px auto 0;
+  margin-top: 24px;
   padding: 0 32px;
   max-width: 1080px;
   display: flex;
-  text-align: center;
+  flex-direction: column;
+  /* text-align: center; */
 }
 
 .profile {
-  width: 320px;
+  display: flex;
 }
 
 .profile .photo {
-  width: 180px;
+  width: 120px;
+  height: 120px;
 }
 
-.profile h1.name {
-  margin-top: 8px;
+.profile-info {
+  margin-left: 24px;
+  display: inline-block;
+}
+
+.profile-info h1.name {
   font-size: 28px;
 }
 
-.profile h2.subname {
-  margin-top: -2px;
+.profile-info h2.subname {
+  margin-top: -4px;
   font-size: 22px;
   font-weight: 300;
 }
 
-.profile .social {
-  margin-top: 18px;
+.profile-info .social {
+  margin-top: 8px;
   list-style: none;
   display: inline-flex;
 }
 
 .social li {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   background: var(--main-color);
   margin-right: 4px;
   display: flex;
@@ -139,7 +147,84 @@ body {
 
 .social li svg {
   margin: auto;
-  font-size: 22px;
+  font-size: 18px;
+}
+
+/* Media Queries */
+
+@media (max-width: 380px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    margin: 40px auto 0;
+    padding: 0 32px;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .profile {
+    width: 320px;
+    padding-right: 24px;
+    flex-direction: column;
+    min-width: 230px;
+    align-items: center;
+  }
+
+  .profile .photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+
+  .profile-info h1.name {
+    margin-top: 8px;
+    font-size: 28px;
+  }
+
+  .profile-info h2.subname {
+    margin-top: -2px;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  .profile-info .social {
+    margin-top: 18px;
+    list-style: none;
+    display: inline-flex;
+  }
+
+  .social li {
+    width: 44px;
+    height: 44px;
+    background: var(--main-color);
+    margin-right: 4px;
+    display: flex;
+    border-radius: 4px;
+  }
+
+  .social li svg {
+    margin: auto;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 920px) {
+  .profile {
+    padding: 0 32px;
+  }
 }
 
 /* AUX */

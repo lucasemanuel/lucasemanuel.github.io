@@ -1,10 +1,20 @@
 <template>
-  <section>
+  <main>
     <header class="title">
       <h3>{{ title }}</h3>
-      <hr>
+      <hr />
     </header>
-  </section>
+    <article class="content">
+      <p>
+        Desenvolvedor backend, experiente em PHP (Laravel e Yii2 Framework), SQL
+        e Git. Estudando e executando projetos desde 2016. Recém graduado com
+        leitura razoável em inglês. Em constante busca por conhecimento, a
+        exemplo de tecnologias frontend - Vue e React - e metodologias como Test
+        Driven Development (TDD) e SCRUM. Sempre preparado para novos desafios e
+        em busca do primeiro emprego como desenvolvedor.
+      </p>
+    </article>
+  </main>
 </template>
 
 <script>
@@ -13,14 +23,15 @@ export default {
   props: {
     title: String,
   },
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-section {
+main {
   flex: 1;
   text-align: start;
+  margin-top: 16px;
 }
 
 header hr {
@@ -34,4 +45,11 @@ h3 {
   font-size: 28px;
 }
 
+/* Media Queries */
+
+@media (min-width: 720px) {
+  main {
+    margin-top: 0;
+  } 
+}
 </style>

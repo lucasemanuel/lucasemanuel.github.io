@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VuePageTransition from 'vue-page-transition'
 
 import router from './router';
 
@@ -12,6 +13,8 @@ library.add(faInstagram, faGithub, faLinkedinIn, faStackOverflow)
 Vue.config.productionTip = false
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.use(VuePageTransition)
 
 // console.log(router);
 new Vue({

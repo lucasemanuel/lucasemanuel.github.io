@@ -34,7 +34,9 @@
           </ul>
         </div>
       </aside>
-      <router-view></router-view>
+      <vue-page-transition name="fade-in-right">
+        <router-view />
+      </vue-page-transition>
     </main>
   </div>
 </template>
@@ -304,5 +306,11 @@ li {
 
 .none {
   display: none;
+}
+</style>
+
+<style scoped>
+div {
+  width: 100%;
 }
 </style>

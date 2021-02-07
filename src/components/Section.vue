@@ -34,15 +34,20 @@ main {
   margin-top: 16px;
 }
 
-header hr {
+header.title hr {
   margin-top: -14px;
   height: 12px;
   background-color: var(--main-color);
 }
 
-h3 {
+header.title h3 {
   margin-left: 24px;
   font-size: 28px;
+}
+
+article.content {
+  margin-top: 16px;
+  font-size: 18px;
 }
 
 /* Media Queries */

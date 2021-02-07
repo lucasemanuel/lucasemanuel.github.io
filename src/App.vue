@@ -25,10 +25,10 @@
           Backend Developer
         </h2>
         <ul class="social">
-          <li>@</li>
-          <li>@</li>
-          <li>@</li>
-          <li>@</li>
+          <li><font-awesome-icon :icon="['fab', 'instagram']" /></li>
+          <li><font-awesome-icon :icon="['fab', 'stack-overflow']" /></li>
+          <li><font-awesome-icon :icon="['fab', 'linkedin-in']" /></li>
+          <li><font-awesome-icon :icon="['fab', 'github']" /></li>
         </ul>
       </aside>
       <section></section>
@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +54,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   color: #d6dfe0;
+  font-family: "Roboto Mono", monospace;
 }
 
 body {
@@ -66,7 +69,7 @@ body {
   width: 100%;
   background-color: #141414;
   text-align: center;
-  padding: 8px 0;
+  padding: 12px 0;
 }
 
 .navbar span::after {
@@ -99,20 +102,29 @@ body {
 }
 
 .profile h2.subname {
-  margin-top: 2px;
+  margin-top: -2px;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .profile .social {
+  margin-top: 18px;
   list-style: none;
+  display: inline-flex;
 }
 
 .social li {
-  display: inline-block;
-  background: #45e4dc;
-  padding: 8px;
-  margin-right: 2px;
+  width: 44px;
+  height: 44px;
+  background: #8155ba;
+  margin-right: 4px;
+  display: flex;
+  border-radius: 4px;
+}
+
+.social li svg {
+  margin: auto;
+  font-size: 22px;
 }
 
 section {

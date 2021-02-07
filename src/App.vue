@@ -31,15 +31,20 @@
           <li><font-awesome-icon :icon="['fab', 'github']" /></li>
         </ul>
       </aside>
-      <section></section>
+      <About />
     </main>
   </div>
 </template>
 
 <script>
+import About from './views/About.vue'
+
 export default {
   name: "App",
-};
+  components: {
+    About
+  }
+}
 </script>
 
 <style>
@@ -55,6 +60,11 @@ export default {
 
   color: #d6dfe0;
   font-family: "Roboto Mono", monospace;
+  border: none;
+}
+
+:root {
+  --main-color: #8155ba;
 }
 
 body {
@@ -83,6 +93,7 @@ body {
 
 .container {
   margin: 40px auto 0;
+  padding: 0 32px;
   max-width: 1080px;
   display: flex;
   text-align: center;
@@ -116,19 +127,19 @@ body {
 .social li {
   width: 44px;
   height: 44px;
-  background: #8155ba;
+  background: var(--main-color);
   margin-right: 4px;
   display: flex;
   border-radius: 4px;
 }
 
+.social li:last-child {
+  margin-right: 0;
+}
+
 .social li svg {
   margin: auto;
   font-size: 22px;
-}
-
-section {
-  flex: 1;
 }
 
 /* AUX */

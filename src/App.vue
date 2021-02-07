@@ -1,15 +1,25 @@
 <template>
   <div id="application">
     <nav class="navbar">
-      <span class="bold">
-        Lucas Emanuel
-      </span>
-      <span>
-        About
-      </span>
-      <span>
-        Projects
-      </span>
+      <ul class="mobile">
+        <li class="bold">
+          Lucas Emanuel
+        </li>
+        <li v-on:click="toogleMenu">
+          Menu
+        </li>
+      </ul>
+      <ul class="menu" v-bind:class="classMenu" v-on:click="toogleMenu">
+        <li class="bold">
+          Lucas Emanuel
+        </li>
+        <li>
+          About
+        </li>
+        <li>
+          Projects
+        </li>
+      </ul>
     </nav>
     <main class="container">
       <aside class="profile">
@@ -46,6 +56,22 @@ export default {
   components: {
     About,
   },
+  data: function() {
+    return { responsive: false };
+  },
+  computed: {
+    classMenu() {
+      return {
+        none: !this.responsive,
+        flex: this.responsive
+      }
+    }
+  },
+  methods: {
+    toogleMenu: function() {
+      this.responsive = !this.responsive;
+    },
+  },
 };
 </script>
 
@@ -73,23 +99,32 @@ body {
   background: #202020;
 }
 
+li {
+  list-style: none;
+}
+
 #application {
   height: 100vh;
 }
 
 .navbar {
+  display: flex;
   width: 100%;
+  justify-content: center;
   background-color: #141414;
-  text-align: center;
   padding: 12px 0;
 }
 
-.navbar span::after {
+.navbar ul.mobile {
+  display: inline-flex;
+}
+
+.navbar .mobile li::after {
   content: "/";
   margin: 0 8px;
 }
 
-.navbar span:last-child::after {
+.navbar .mobile li:last-child::after {
   content: "";
 }
 
@@ -99,7 +134,6 @@ body {
   max-width: 1080px;
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
 }
 
 .profile {
@@ -128,7 +162,6 @@ body {
 
 .profile-info .social {
   margin-top: 8px;
-  list-style: none;
   display: inline-flex;
 }
 
@@ -162,7 +195,50 @@ body {
   }
 }
 
+@media (max-width: 719.9px) {
+  .navbar ul.menu {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    font-size: 32px;
+    background-color: #141414ee;
+  }
+
+  .navbar ul.menu li {
+    padding: 2px 8px;
+    margin: 4px 8px;
+    border-bottom: solid 4px var(--main-color);
+  }
+
+  .navbar ul.menu li:hover {
+    background: var(--main-color);
+  }
+}
+
 @media (min-width: 720px) {
+  .navbar ul.mobile {
+    display: none;
+  }
+
+  .navbar ul.menu {
+    display: inline-flex;
+  }
+
+  .navbar li::after {
+    content: "/";
+    margin: 0 8px;
+  }
+
+  .navbar li:last-child::after {
+    content: "";
+  }
+
   .container {
     margin: 40px auto 0;
     padding: 0 32px;
@@ -202,7 +278,6 @@ body {
 
   .profile-info .social {
     margin-top: 18px;
-    list-style: none;
     display: inline-flex;
   }
 
@@ -235,5 +310,13 @@ body {
 
 .bold {
   font-weight: 700;
+}
+
+.flex {
+  display: flex;
+}
+
+.none {
+  display: none;
 }
 </style>

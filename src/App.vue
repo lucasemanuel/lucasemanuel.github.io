@@ -2,23 +2,14 @@
   <div id="application">
     <nav class="navbar">
       <ul class="mobile">
-        <li class="bold">
-          Lucas Emanuel
-        </li>
-        <li v-on:click="toogleMenu">
-          Menu
-        </li>
+        <li class="bold">Lucas Emanuel</li>
+        <li v-on:click="toogleMenu">Menu</li>
       </ul>
       <ul class="menu" v-bind:class="classMenu" v-on:click="toogleMenu">
-        <li class="bold">
-          Lucas Emanuel
-        </li>
-        <li>
-          About
-        </li>
-        <li>
-          Projects
-        </li>
+        <li class="bold">Lucas Emanuel</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Carrer</li>
       </ul>
     </nav>
     <main class="container">
@@ -56,19 +47,19 @@ export default {
   components: {
     About,
   },
-  data: function() {
+  data() {
     return { responsive: false };
   },
   computed: {
     classMenu() {
       return {
         none: !this.responsive,
-        flex: this.responsive
-      }
-    }
+        flex: this.responsive,
+      };
+    },
   },
   methods: {
-    toogleMenu: function() {
+    toogleMenu() {
       this.responsive = !this.responsive;
     },
   },
@@ -121,7 +112,7 @@ li {
 
 .navbar .mobile li::after {
   content: "/";
-  margin: 0 8px;
+  margin: 0 12px;
 }
 
 .navbar .mobile li:last-child::after {
@@ -232,7 +223,7 @@ li {
 
   .navbar li::after {
     content: "/";
-    margin: 0 8px;
+    margin: 0 12px;
   }
 
   .navbar li:last-child::after {

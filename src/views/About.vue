@@ -3,10 +3,11 @@
     <p id="resume">
       Sou <u>desenvolvedor backend</u>, experiente em
       <u>PHP utilizando Laravel e Yii2 Framework</u>,
-      <u>Git e SQL (PostgreSQL e Mysql)</u>. 99% Graduado em Tecnológia e
+      <u>Git e SQL (PostgreSQL e Mysql)</u>. 99% Graduado em Tecnologia em
       Sistemas para Internet, com leitura razoável em inglês. Em constante busca
-      por conhecimento, recentimente <u>estudando e aplicando em projetos</u> de
-      tecnologias frontend, <u>Vue e React</u>, e metodologias como
+      por conhecimento, recentemente
+      <u>estudando e aplicando os estudos em projetos</u> utilizando tecnologias
+      frontend, como, <u>Vue e React</u>, e metodologias como
       <u>Test Driven Development (TDD), Kanban e Git Flow</u>. Sempre preparado
       para novos desafios e em busca do primeiro emprego como desenvolvedor.
     </p>

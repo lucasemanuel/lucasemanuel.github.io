@@ -3,10 +3,10 @@
     <nav class="navbar">
       <ul class="mobile">
         <li class="bold">Lucas Emanuel</li>
-        <li v-on:click="toogleMenu"><a href="#">Menu</a></li>
+        <li v-on:click="openMenu"><a href="#">Menu</a></li>
       </ul>
-      <ul class="menu" v-bind:class="classMenu" v-on:click="toogleMenu">
-        <li class="bold">Lucas Emanuel</li>
+      <ul class="menu" v-bind:class="classMenu" v-on:click="closeMenu">
+        <li class="bold" v-bind:class="{none: responsive}">Lucas Emanuel</li>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
         <li><router-link to="/carrer">Carrer</router-link></li>
@@ -81,8 +81,11 @@ export default {
     },
   },
   methods: {
-    toogleMenu() {
-      this.responsive = !this.responsive;
+    openMenu() {
+      this.responsive = true;
+    },
+    closeMenu() {
+      this.responsive = false;
     },
   },
 };
@@ -145,14 +148,9 @@ li {
   display: inline-flex;
 }
 
-.navbar .mobile li::after {
+.navbar .mobile li:not(:last-child)::after {
   content: "/";
   margin: 0 12px;
-}
-
-.navbar .mobile li:last-child::after {
-  content: "";
-  -right: 0;
 }
 
 .navbar ul.menu li:not(.bold) a {
@@ -215,8 +213,12 @@ li {
 }
 
 .social li a {
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
   font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Media Queries */
@@ -262,13 +264,9 @@ li {
     display: inline-flex;
   }
 
-  .navbar li::after {
+  .navbar li:not(:last-child)::after {
     content: "/";
     margin: 0 12px;
-  }
-
-  .navbar li:last-child::after {
-    content: "";
   }
 
   .container {
@@ -318,12 +316,10 @@ li {
     height: 44px;
     background: var(--main-color);
     margin-right: 4px;
-    display: flex;
     border-radius: 4px;
   }
 
   .social li svg {
-    margin: auto;
     font-size: 22px;
   }
 }

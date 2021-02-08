@@ -1,23 +1,44 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VuePageTransition from 'vue-page-transition'
+import Vue from "vue";
+import App from "./App.vue";
+import VuePageTransition from "vue-page-transition";
 
-import router from './router';
+import router from "./router";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faInstagram, faGithub, faLinkedinIn, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedinIn,
+  faPhp,
+  faJs,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faDatabase,
+  faEnvelope,
+  faCogs,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faInstagram, faGithub, faLinkedinIn, faStackOverflow)
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-Vue.config.productionTip = false
+library.add(
+  faInstagram,
+  faGithub,
+  faLinkedinIn,
+  faEnvelope,
+  faPhp,
+  faJs,
+  faDatabase,
+  faCogs
+);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.config.productionTip = false;
 
-Vue.use(VuePageTransition)
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+Vue.use(VuePageTransition);
 
 // console.log(router);
 new Vue({
   router,
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

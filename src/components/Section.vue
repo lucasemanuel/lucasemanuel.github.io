@@ -20,7 +20,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 section {
   text-align: start;
   margin-top: 16px;
@@ -28,14 +28,14 @@ section {
 }
 
 header.title hr {
-  margin-top: -14px;
-  height: 12px;
+  margin-top: -16px;
+  height: 10px;
   background-color: var(--main-color);
 }
 
 header.title h3 {
   margin-left: 24px;
-  font-size: 28px;
+  font-size: 40px;
 }
 
 article.content {
@@ -48,6 +48,6 @@ article.content {
 @media (min-width: 720px) {
   section {
     margin-top: 0;
-  } 
+  }
 }
 </style>

@@ -145,9 +145,6 @@ export default {
 </script>
 
 <style scoped>
-.project p {
-  margin-bottom: 6px;
-}
 .rectangle {
   height: 34px;
   width: 100px;

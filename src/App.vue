@@ -87,6 +87,19 @@ body {
   background: #202020;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+p {
+  margin-bottom: 6px;
+}
+
 li {
   list-style: none;
 }
@@ -114,6 +127,7 @@ li {
 
 .navbar .mobile li:last-child::after {
   content: "";
+    -right: 0;
 }
 
 .container {
@@ -286,7 +300,7 @@ li {
 
 @media (min-width: 920px) {
   .profile {
-    padding: 0 32px;
+    padding-right: 32px;
   }
 }
 

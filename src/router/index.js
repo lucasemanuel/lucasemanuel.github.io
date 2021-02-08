@@ -4,6 +4,7 @@ import About from "../views/About.vue";
 import Project from "../views/Project.vue";
 import Carrer from "../views/Carrer.vue";
 import NotFound from "../views/NotFound.vue";
+import RedirectPageNotFound from "../components/RedirectPageNotFound"
 
 Vue.use(Router);
 
@@ -13,6 +14,7 @@ export default new Router({
     { path: "/", component: About },
     { path: "/projects", component: Project },
     { path: "/carrer", component: Carrer },
-    { path: "/*", component: NotFound },
+    { path: "/404", component: NotFound },
+    { path: ":catchAll(.*)", component: RedirectPageNotFound },
   ],
 });

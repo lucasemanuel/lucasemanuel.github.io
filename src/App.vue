@@ -7,7 +7,7 @@
       </ul>
       <ul class="menu" v-bind:class="classMenu" v-on:click="toogleMenu">
         <li class="bold">Lucas Emanuel</li>
-        <li><router-link to="/">About</router-link></li>
+        <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
         <li><router-link to="/carrer">Carrer</router-link></li>
       </ul>
@@ -27,10 +27,35 @@
             Backend Developer
           </h2>
           <ul class="social">
-            <li><font-awesome-icon :icon="['fab', 'instagram']" /></li>
-            <li><font-awesome-icon :icon="['fab', 'stack-overflow']" /></li>
-            <li><font-awesome-icon :icon="['fab', 'linkedin-in']" /></li>
-            <li><font-awesome-icon :icon="['fab', 'github']" /></li>
+            <li>
+              <a
+                href="https://github.com/lucasemanuel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><font-awesome-icon :icon="['fab', 'github']"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/lucaseman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><font-awesome-icon :icon="['fab', 'linkedin-in']"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/_lucaseman"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><font-awesome-icon :icon="['fab', 'instagram']"
+              /></a>
+            </li>
+            <li>
+              <a href="mailto:lucaxemanuel@gmail.com"
+                ><font-awesome-icon :icon="['fas', 'envelope']"
+              /></a>
+            </li>
           </ul>
         </div>
       </aside>
@@ -92,8 +117,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 p {
@@ -127,7 +152,7 @@ li {
 
 .navbar .mobile li:last-child::after {
   content: "";
-    -right: 0;
+  -right: 0;
 }
 
 .container {
@@ -167,7 +192,7 @@ li {
   display: inline-flex;
 }
 
-.social li {
+.social li{
   width: 30px;
   height: 30px;
   background: var(--main-color);
@@ -180,7 +205,7 @@ li {
   margin-right: 0;
 }
 
-.social li svg {
+.social li a {
   margin: auto;
   font-size: 18px;
 }

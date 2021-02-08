@@ -155,6 +155,15 @@ li {
   -right: 0;
 }
 
+.navbar ul.menu li:not(.bold) a {
+  transition: .4s ease-in-out;
+}
+
+.navbar ul.menu li:not(.bold) a:hover {
+  background-color: var(--main-color);
+  border-bottom: none;
+}
+
 .container {
   margin-top: 24px;
   padding: 0 32px;
@@ -192,7 +201,7 @@ li {
   display: inline-flex;
 }
 
-.social li{
+.social li {
   width: 30px;
   height: 30px;
   background: var(--main-color);
@@ -241,10 +250,6 @@ li {
     padding: 2px 8px;
     margin: 4px 8px;
     border-bottom: solid 4px var(--main-color);
-  }
-
-  .navbar ul.menu li:hover {
-    background: var(--main-color);
   }
 }
 

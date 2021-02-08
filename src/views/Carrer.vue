@@ -1,5 +1,7 @@
 <template>
-  <Section title="Carrer" />
+  <Section title="Carrer">
+    <del>Not</del> Found. Se você me encontrou ainda desempregado está com sorte, entre em contato comigo, não deixe essa oportunidade passar.
+  </Section>
 </template>
 
 <script>

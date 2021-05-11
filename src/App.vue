@@ -3,13 +3,13 @@
     <nav class="navbar">
       <ul class="mobile">
         <li class="bold">Lucas Emanuel</li>
-        <li v-on:click="openMenu"><a href="#">Menu</a></li>
+        <!-- <li v-on:click="openMenu"><a href="#">Menu</a></li> -->
       </ul>
       <ul class="menu" v-bind:class="classMenu" v-on:click="closeMenu">
-        <li class="bold" v-bind:class="{none: responsive}">Lucas Emanuel</li>
-        <li><router-link to="/">Home</router-link></li>
+        <li class="bold" v-bind:class="{ none: responsive }">Lucas Emanuel</li>
+        <!-- <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
-        <li><router-link to="/carrer">Carrer</router-link></li>
+        <li><router-link to="/carrer">Carrer</router-link></li> -->
       </ul>
     </nav>
     <main class="container">
@@ -60,7 +60,10 @@
         </div>
       </aside>
       <vue-page-transition name="fade-in-right">
-        <router-view />
+        <h1 class="maintenance">
+          Em Manutenção
+        </h1>
+        <!-- <router-view /> -->
       </vue-page-transition>
     </main>
   </div>
@@ -68,31 +71,36 @@
 
 <script>
 export default {
-  name: "App",
-  data() {
-    return { responsive: false };
+  name: 'App',
+  data () {
+    return { responsive: false }
   },
   computed: {
-    classMenu() {
+    classMenu () {
       return {
         none: !this.responsive,
-        flex: this.responsive,
-      };
-    },
+        flex: this.responsive
+      }
+    }
+  },
+  mounted () {
+    setTimeout(() => {
+      window.location.href = 'https://github.com/lucasemanuel/'
+    }, 8000)
   },
   methods: {
-    openMenu() {
-      this.responsive = true;
+    openMenu () {
+      this.responsive = true
     },
-    closeMenu() {
-      this.responsive = false;
-    },
-  },
-};
+    closeMenu () {
+      this.responsive = false
+    }
+  }
+}
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -103,7 +111,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   color: #d6dfe0;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   border: none;
 }
 
@@ -122,6 +130,9 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+h1.maintenance {
 }
 
 p {
@@ -149,12 +160,12 @@ li {
 }
 
 .navbar .mobile li:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 12px;
 }
 
 .navbar ul.menu li:not(.bold) a {
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .navbar ul.menu li:not(.bold) a:hover {
@@ -265,7 +276,7 @@ li {
   }
 
   .navbar li:not(:last-child)::after {
-    content: "/";
+    content: '/';
     margin: 0 12px;
   }
 
